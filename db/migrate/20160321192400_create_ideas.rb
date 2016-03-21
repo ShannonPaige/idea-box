@@ -4,6 +4,8 @@ class CreateIdeas < ActiveRecord::Migration
       t.string :title
       t.string :body
       t.string :quality, default: 'swill'
+
+      t.timestamps null: false
     end
   end
 end

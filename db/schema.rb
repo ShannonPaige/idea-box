@@ -17,9 +17,11 @@ ActiveRecord::Schema.define(version: 20160321192400) do
   enable_extension "plpgsql"
 
   create_table "ideas", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.string "quality", default: "swill"
+    t.string   "title"
+    t.string   "body"
+    t.string   "quality",    default: "swill"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
 end

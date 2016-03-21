@@ -20,7 +20,11 @@ function renderAllIdeas() {
 
 function renderIdeas(ideas) {
   var htmlIdeas = ideas.map(function(idea){
-    return('<h2>' +  idea.title + '</h2>')
+    console.log(idea)
+    var truncatedBody = idea.body.substring(0,100);
+    return('<h3>' +  idea.title + '</h3>' +
+          '<p>' + truncatedBody + '</p>' +
+          '<p>' + idea.quality + '</p>')
   })
   $('#all-ideas').append(htmlIdeas)
 }
