@@ -32,9 +32,27 @@ describe Api::V1::IdeasController, type: :controller do
       assert_equal idea2.title, object2["title"]
       assert_equal idea2.body, object2["body"]
       assert_equal idea2.quality, object2["quality"]
+    end
+  end
 
+  describe "POST #create" do
+    it "returns http success" do
+      get :create, format: :json, title: 'New Title', body: 'New Body'
+      expect(response).to have_http_status(:success)
     end
 
+    it "returns one object" do
+      get :create, format: :json, title: 'New Title', body: 'New Body'
+      assert_kind_of Hash, json_response
+    end
+
+    it "returns the correct object" do
+      get :create, format: :json, title: 'New Title', body: 'New Body'
+
+      assert_equal "New Title", json_response["title"]
+      assert_equal "New Body", json_response["body"]
+      assert_equal "swill", json_response["quality"]
+    end
   end
 
 end
