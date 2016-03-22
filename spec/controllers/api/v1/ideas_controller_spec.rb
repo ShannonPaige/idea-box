@@ -57,21 +57,21 @@ describe Api::V1::IdeasController, type: :controller do
 
   describe "DELETE #destroy" do
     it "returns http success" do
-      get :create, format: :json, id: idea1.id
+      get :destroy, format: :json, id: idea1.id
       expect(response).to have_http_status(:success)
     end
 
     it "returns one object" do
-      get :create, format: :json, id: idea1.id
+      get :destroy, format: :json, id: idea1.id
       assert_kind_of Hash, json_response
     end
 
     it "returns the correct object" do
-      get :create, format: :json, id: idea1.id
+      get :destroy, format: :json, id: idea1.id
 
       assert_equal idea1.title, json_response["title"]
       assert_equal idea1.body, json_response["body"]
-      assert_equal idea1.quanity, json_response["quality"]
+      assert_equal idea1.quality, json_response["quality"]
     end
   end
 
