@@ -10,6 +10,11 @@ class Api::V1::IdeasController < ApplicationController
     respond_to do |format|
       format.json { render :json => @idea }  # note, no :location or :status options
     end
+    # respond_with :api, :v1, @idea
+  end
+
+  def destroy
+    byebug
   end
 
 
