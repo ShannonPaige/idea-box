@@ -21,15 +21,6 @@ function createNewIdea(idea_params){
   })
 }
 
-function renderIdea(idea) {
-  var truncatedBody = idea.body.substring(0,100);
-  var htmlIdea =  '<h3>' +  idea.title + '</h3>' +
-                  '<p>' + truncatedBody + '</p>' +
-                  '<p>' + idea.quality + '</p>' +
-                  '<button class="delete-btn" id=' + idea.id + '>Delete Idea</button>'
-  deleteIdeaButton()
-  $('#all-ideas').prepend(htmlIdea)
-}
 
 function clearForm() {
   $("#title").val('')

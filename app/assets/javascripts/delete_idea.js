@@ -6,13 +6,13 @@ function deleteIdeaButton() {
 }
 
 function deleteIdea(id){
+  console.log(id)
   $.ajax({
-    url: '/api/v1/ideas',
-    type: 'DESTROY',
-    data: id,
+    url: '/api/v1/ideas/' + id,
+    type: 'DELETE',
     success: function(response){
       console.log('deleteIdea SUCCESS', response)
-      // renderIdea(response);
+      removeIdea(id);
     }, error: function(xhr){
       console.log('deleteIdea FAIL', xhr)
     }

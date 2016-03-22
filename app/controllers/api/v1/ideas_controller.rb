@@ -6,15 +6,11 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.create(idea_params)
-    respond_to do |format|
-      format.json { render :json => @idea }  # note, no :location or :status options
-    end
-    # respond_with :api, :v1, @idea
+    respond_with :api, :v1, Idea.create(idea_params)
   end
 
   def destroy
-    byebug
+    respond_with :api, :v1, Idea.destroy(params[:id])
   end
 
 
