@@ -1,5 +1,5 @@
 function deleteIdeaButton() {
-  $('.delete-btn').on("click", function(){
+  $('#all-ideas').on("click", ".delete-btn", function(){
     var id = this.id.replace('delete-btn-', '');
     deleteIdea(id)
   })
