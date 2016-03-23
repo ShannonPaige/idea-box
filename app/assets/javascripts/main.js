@@ -3,4 +3,5 @@ $(document).ready(function(){
   newIdeaButton();
   deleteIdeaButton();
   editIdeaButton();
+  saveIdeaButton();
 });

@@ -55,6 +55,26 @@ describe Api::V1::IdeasController, type: :controller do
     end
   end
 
+  describe "PATCH #update" do
+    it "returns http success" do
+      get :update, format: :json, id: idea2.id, title: 'New Title', body: 'New Body'
+      expect(response).to have_http_status(:success)
+    end
+
+    it "returns one object" do
+      get :update, format: :json, id: idea2.id, title: 'New Title', body: 'New Body'
+      assert_kind_of Hash, json_response
+    end
+
+    it "returns the correct object" do
+      get :update, format: :json, id: idea2.id, title: 'New Title', body: 'New Body'
+
+      assert_equal "New Title", json_response["title"]
+      assert_equal "New Body", json_response["body"]
+      assert_equal "swill", json_response["quality"]
+    end
+  end
+
   describe "DELETE #destroy" do
     it "returns http success" do
       get :destroy, format: :json, id: idea1.id
