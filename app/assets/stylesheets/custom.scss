@@ -3,3 +3,25 @@
   color: blue;
   border-style: groove;
 }
+
+h1, h3 {
+  font-family: 'Pacifico', cursive;
+}
+
+h3 {
+  margin-top: 0px
+}
+
+body {
+    background-image: url("paper.jpg");
+}
+
+.row {
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+
+.form-control {
+  background-color: #FCF8E3;
+}
