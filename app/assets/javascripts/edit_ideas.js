@@ -2,9 +2,9 @@ function editIdeaButton() {
   $('#all-ideas').on("click", ".edit-btn", function(){
     var id = this.id.replace('edit-btn-', '');
     // make editable
+    $('#idea-'+id+' .editable').addClass('editing')
     document.querySelectorAll('#idea-'+id+' .editable')[0].contentEditable = true;
-    // show save button
-    $('#idea-'+id+' .edit-btn').text('Save Changes')
+    $('#idea-'+id+' .edit-btn').text('Save Changes').addClass('save-btn').removeClass('edit-btn')
     // editIdea(id)
   })
 }
