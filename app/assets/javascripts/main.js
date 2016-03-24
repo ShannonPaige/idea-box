@@ -5,4 +5,5 @@ $(document).ready(function(){
   editIdeaButton();
   saveIdeaButton();
   searchIdeas();
+  upvoteIdeaButton();
 });

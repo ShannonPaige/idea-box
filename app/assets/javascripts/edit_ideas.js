@@ -26,16 +26,16 @@ function updateIdea(id, idea_params){
     data: idea_params,
     success: function(response){
       console.log('updateIdea SUCCESS', response)
-      saveIdea()
+      debugger;
+      saveIdea(id)
     }, error: function(xhr){
       console.log('updateIdea FAIL', xhr)
     }
   })
 }
 
-function saveIdea(){
-  debugger;
-  $('.editable').removeClass('editing')
-  document.querySelectorAll('.editable')[0].contentEditable = false;
-  $('.save-btn').text('Edit Idea').removeClass('save-btn').addClass('edit-btn')
+function saveIdea(id){
+  $('#idea-'+id+' .editable').removeClass('editing')
+  document.querySelectorAll('#idea-'+id+' .editable')[0].contentEditable = false;
+  $('#idea-'+id+' .save-btn').text('Edit Idea').removeClass('save-btn').addClass('edit-btn')
 }
