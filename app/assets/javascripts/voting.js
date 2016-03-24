@@ -1,12 +1,27 @@
 function upvoteIdeaButton() {
   $('#all-ideas').on("click", ".upvote-btn", function(){
-    console.log('upvote idea button clicked')
-    var id = this.id.replace('vote-btn-', '');
-    var current_quality = this.closest('.quality').getElementsByTagName('p')[0].innerHTML.toLowerCase()
-    var new_quality = upvote(current_quality);
-    var idea_params = { quality: new_quality }
-    voteIdea(id, idea_params);
+    var current_object = this
+    var new_quality = upvote(currentQuality(current_object))
+    voteButton(current_object, new_quality)
   })
+}
+
+function downvoteIdeaButton() {
+  $('#all-ideas').on("click", ".downvote-btn", function(){
+    var current_object = this
+    var new_quality = downvote(currentQuality(current_object))
+    voteButton(current_object, new_quality)
+  })
+}
+
+function currentQuality(current_object){
+  return current_object.closest('.quality').getElementsByTagName('p')[0].innerHTML.toLowerCase()
+}
+
+function voteButton(current_object, new_quality){
+  var id = current_object.id.replace('vote-btn-', '');
+  var idea_params = { quality: new_quality }
+  voteIdea(id, idea_params);
 }
 
 function upvote(current_quality){
@@ -14,6 +29,14 @@ function upvote(current_quality){
     return 'plausible'
   } else {
     return 'genius'
+  }
+}
+
+function downvote(current_quality){
+  if (current_quality === 'genius'){
+    return 'plausible'
+  } else {
+    return 'swill'
   }
 }
 

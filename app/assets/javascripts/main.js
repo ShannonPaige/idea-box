@@ -6,4 +6,5 @@ $(document).ready(function(){
   saveIdeaButton();
   searchIdeas();
   upvoteIdeaButton();
+  downvoteIdeaButton();
 });
