@@ -1,3 +1,5 @@
+var counter = 0;
+
 $(document).ready(function(){
   getIdeas();
   newIdeaButton();
@@ -7,4 +9,5 @@ $(document).ready(function(){
   searchIdeas();
   upvoteIdeaButton();
   downvoteIdeaButton();
+  sortIdeas();
 });

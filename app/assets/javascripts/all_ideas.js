@@ -2,6 +2,7 @@ function getIdeas() {
   $.ajax({
     url: '/api/v1/ideas',
     type: 'GET',
+    data: {sort_order: counter},
     success: function(response){
       console.log('renderAllIdeas SUCCESS', response)
       renderIdeas(response);

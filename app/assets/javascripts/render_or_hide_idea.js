@@ -13,7 +13,7 @@ function renderIdea(idea) {
                       '</div>'+
                     '</div>' +
                     '<div class="col-md-3 quality">' +
-                      '<h3>Idea Quality</h3>' +
+                      '<h4>Quality</h4>' +
                       '<p>' + idea.quality.toUpperCase() + '</p>' +
                       '<div class="btn-group btn-group-xs" role="group">' +
                         '<button type="button" class="btn btn-success upvote-btn" id=vote-btn-' + idea.id + '><span class="glyphicon glyphicon-arrow-up" ></span></button>' +
@@ -30,6 +30,7 @@ function renderIdea(idea) {
 }
 
 function renderIdeas(ideas) {
+  document.getElementById('all-ideas').innerHTML = ""
   var htmlIdeas = ideas.map(function(idea){
     renderIdea(idea)
   })

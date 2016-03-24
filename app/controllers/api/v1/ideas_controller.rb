@@ -2,7 +2,7 @@ class Api::V1::IdeasController < ApplicationController
   respond_to :json
 
   def index
-    respond_with :api, :v1, Idea.where(idea_params)
+    respond_with :api, :v1, Idea.sort_by(idea_params)
   end
 
   def create
@@ -21,6 +21,6 @@ class Api::V1::IdeasController < ApplicationController
   private
 
     def idea_params
-      params.permit(:id, :title, :body, :quality)
+      params.permit(:id, :title, :body, :quality, :sort_order)
     end
 end
