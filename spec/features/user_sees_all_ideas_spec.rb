@@ -9,6 +9,8 @@ describe "the homepage" do
     visit '/'
 
     expect(page).to have_content "What's Your Idea"
+    expect(page).to have_content "Search Ideas"
+    expect(page).to have_content "Current Ideas"
   end
 
 end

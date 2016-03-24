@@ -13,13 +13,14 @@ h3 {
 }
 
 body {
-    background-image: image-url("paper.jpg");
+  background-image: image-url("paper.jpg");
 }
 
 .row {
   border-style: solid;
   border-width: 1px;
   padding: 10px;
+  margin-bottom: 3px;
 }
 
 .form-control {

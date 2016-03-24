@@ -24,8 +24,8 @@ function renderIdea(idea) {
                       '<div class="btn-group btn-group-xs" role="group">' +
                         '<button type="button" class="btn btn-danger delete-btn" id=delete-btn-' + idea.id + '>X</button>' +
                       '</div>'+
-                    '</div>' +
-                  '</div><br />'
+                    '</div><br />' +
+                  '</div>'
   $('#all-ideas').prepend(htmlIdea)
 }
 

@@ -2,7 +2,7 @@ class Api::V1::IdeasController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Idea.where(idea_params)
+    respond_with :api, :v1, Idea.where(idea_params)
   end
 
   def create
@@ -10,7 +10,7 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def update
-    respond_with Idea.update(params[:id], idea_params)
+    respond_with :api, :v1, Idea.update(params[:id], idea_params)
   end
 
   def destroy
