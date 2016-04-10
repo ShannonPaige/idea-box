@@ -1,6 +1,5 @@
 function renderIdea(idea) {
-  // var truncatedBody = idea.body.substring(0,100);
-  var truncatedBody = truncateOnWord(idea.body)
+  var truncatedBody = truncateOnWord(idea.body);
   var htmlIdea = '<div class="row idea" id=idea-' + idea.id + ' >' +
                     '<div class="col-md-8">' +
                       '<div class="editable">' +
@@ -25,15 +24,15 @@ function renderIdea(idea) {
                         '<button type="button" class="btn btn-danger delete-btn" id=delete-btn-' + idea.id + '>X</button>' +
                       '</div>'+
                     '</div><br />' +
-                  '</div>'
-  $('#all-ideas').prepend(htmlIdea)
+                  '</div>';
+  $('#all-ideas').prepend(htmlIdea);
 }
 
 function renderIdeas(ideas) {
-  document.getElementById('all-ideas').innerHTML = ""
+  document.getElementById('all-ideas').innerHTML = "";
   var htmlIdeas = ideas.map(function(idea){
-    renderIdea(idea)
-  })
+    renderIdea(idea);
+  });
 }
 
 function removeIdea(id){
