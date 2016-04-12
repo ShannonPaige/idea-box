@@ -1,8 +1,8 @@
 function deleteIdeaButton() {
   $('#all-ideas').on("click", ".delete-btn", function(){
     var id = this.id.replace('delete-btn-', '');
-    deleteIdea(id)
-  })
+    deleteIdea(id);
+  });
 }
 
 function deleteIdea(id){
@@ -10,10 +10,9 @@ function deleteIdea(id){
     url: '/api/v1/ideas/' + id,
     type: 'DELETE',
     success: function(response){
-      console.log('deleteIdea SUCCESS', response)
-      removeIdea(id)
+      removeIdea(id);
     }, error: function(xhr){
-      console.log('deleteIdea FAIL', xhr)
+      console.log('deleteIdea FAIL', xhr);
     }
-  })
+  });
 }
